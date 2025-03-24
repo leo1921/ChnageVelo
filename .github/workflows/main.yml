@@ -37,9 +37,9 @@ jobs:
         uses: ServiceNow/servicenow-devops-change@v5.1.0
         id: create
         with:
-          devops-integration-user-name: 'DevOps Integration User'
-          devops-integration-user-password: '9686030641@Howru'
-          instance-url: 'https://dev240525.service-now.com'
+          devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
+          devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
+          instance-url: ${{ secrets.SN_INSTANCE_URL }}
           tool-id: 'b31a02a3831cee10b2ad93a6feaad32c'
           context-github: ${{ toJSON(github) }}
           job-name: 'ServiceNow Change Approval'
